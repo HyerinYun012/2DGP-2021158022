@@ -87,7 +87,9 @@ def move_triangle():
     for i in range(0, 100):
         clear_canvas()
         x = 300 + 3*i
-        
+        y = 300 + i
+        character.draw(x, y)
+        update_canvas()
     
     pass
 
