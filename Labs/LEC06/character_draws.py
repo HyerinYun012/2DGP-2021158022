@@ -80,6 +80,7 @@ def move_triangle():
         character.draw(x, y)
         update_canvas()
         print("Triangle")
+        delay(0.01)
 
     pass
 
