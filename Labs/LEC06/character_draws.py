@@ -49,6 +49,7 @@ def move_rectangle():
         character.draw(x, 300)
         update_canvas()
         x += 1
+        delay(0.01)
     
     pass
 
