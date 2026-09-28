@@ -64,6 +64,8 @@ def move_rectangle():
         update_canvas()
         x -= 1
         delay(0.01)
+    while y > 300:
+        pass
     pass
 
 def move_triangle():
