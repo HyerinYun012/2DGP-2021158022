@@ -92,6 +92,11 @@ def move_triangle():
         delay(0.01)
         character.draw(x, y)
         update_canvas()
+
+    # 점(600, 400)에서 점 (400, 500)으로 이동
+    for i in range(0, 100):
+        clear_canvas()
+        x = 600 - 2*i
     
     pass
 
