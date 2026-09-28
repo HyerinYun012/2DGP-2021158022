@@ -97,6 +97,10 @@ def move_triangle():
     for i in range(0, 100):
         clear_canvas()
         x = 600 - 2*i
+        y = 400 + i
+        delay(0.01)
+        character.draw(x, y)
+        update_canvas()
     
     pass
 
