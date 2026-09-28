@@ -75,7 +75,8 @@ def move_rectangle():
 def move_triangle():
     for i in range(0,100):
         clear_canvas()
-        character.draw(400, 300)
+        x = 400 + 2*i
+        character.draw(x, 300)
         update_canvas()
         print("Triangle")
 
