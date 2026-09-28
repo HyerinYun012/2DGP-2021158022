@@ -17,6 +17,12 @@ def move_circle():
         character.draw(int(400+(r*r-b*b)**0.5), int(300 + b)) 
         update_canvas()
         delay(0.01)
+    # 1/4 원 그리기
+    for b in range(r, 0, -1):
+        clear_canvas()
+        character.draw(int(400-(r*r-b*b)**0.5), int(300 + b)) 
+        update_canvas()
+        delay(0.01)
     pass    
 
 def move_rectangle():
