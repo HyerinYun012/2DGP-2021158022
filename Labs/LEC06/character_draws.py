@@ -74,14 +74,21 @@ def move_rectangle():
 
 def move_triangle():
     print("Triangle")
+    # 점(400, 500) 에서 점 (300, 300)으로 이동
     for i in range(0,100):
         clear_canvas()
         x = 400 - i
-        y = 500 - 2*i 
+        y = 500 - 2*i
         character.draw(x, y)
         update_canvas()
         
         delay(0.01)
+    # 점 (300, 300)에서 점 ()
+    for i in range(0, 100):
+        clear_canvas()
+        x = 300 + 6*i
+        
+    
     pass
 
 while True:
