@@ -76,13 +76,12 @@ def move_triangle():
     print("Triangle")
     for i in range(0,100):
         clear_canvas()
-        x = 400 + 2*i
+        x = 400 - i
         y = 300 + (20000- i*i)**0.5
         character.draw(x, y)
         update_canvas()
         
         delay(0.01)
-
     pass
 
 while True:
