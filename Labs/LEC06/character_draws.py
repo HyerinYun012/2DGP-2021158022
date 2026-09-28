@@ -11,10 +11,12 @@ def move_circle():
     print("Circle")
     r = 300
 
-    clear_canvas()
-    character.draw(400, 300)
-    update_canvas()
-    pass
+    # 1/4 원 그리기
+    for b in range(0,r):
+        clear_canvas()
+        character.draw(int(400+(r*r-b*b)**0.5), int(300 + b)) 
+        update_canvas()
+    pass    
 
 def move_rectangle():
     print("Rectangle")
