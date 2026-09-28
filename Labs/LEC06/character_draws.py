@@ -53,6 +53,12 @@ def move_rectangle():
         x += 1
         delay(0.01)
     while y < 500:
+        clear_canvas()
+        character.draw(700, y)
+        update_canvas()
+        y += 1
+        delay(0.01)
+    while x > 300:
         pass
     pass
 
