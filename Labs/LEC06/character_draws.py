@@ -44,13 +44,16 @@ def move_rectangle():
 
     # 사각형 가로 그리기
     x =300
+    # 사각형 세로 길이
+    y = 300
     while x < 700: # 가로 길이는 300, 중심 (400,300)
         clear_canvas()
         character.draw(x, 300)
         update_canvas()
         x += 1
         delay(0.01)
-    
+    while y < 500:
+        pass
     pass
 
 def move_triangle():
