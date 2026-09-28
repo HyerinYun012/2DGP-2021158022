@@ -86,7 +86,7 @@ def move_triangle():
     # 점 (300, 300)에서 점 ()
     for i in range(0, 100):
         clear_canvas()
-        x = 300 + 6*i
+        x = 300 + 3*i
         
     
     pass
