@@ -77,7 +77,7 @@ def move_triangle():
     for i in range(0,100):
         clear_canvas()
         x = 400 - i
-        y = 300 + (20000- i*i)**0.5
+        y = 500 - 2*i 
         character.draw(x, y)
         update_canvas()
         
