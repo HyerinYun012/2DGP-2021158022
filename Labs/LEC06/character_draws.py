@@ -80,14 +80,16 @@ def move_triangle():
         x = 400 - i
         y = 500 - 2*i
         character.draw(x, y)
+        delay(0.01)
         update_canvas()
         
         delay(0.01)
-    # 점 (300, 300)에서 점 ()
+    # 점 (300, 300)에서 점 (600, 400)으로 이동
     for i in range(0, 100):
         clear_canvas()
         x = 300 + 3*i
         y = 300 + i
+        delay(0.01)
         character.draw(x, y)
         update_canvas()
     
