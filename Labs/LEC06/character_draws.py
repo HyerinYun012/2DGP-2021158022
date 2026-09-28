@@ -35,10 +35,30 @@ def move_circle():
         character.draw(int(400+(r*r-b*b)**0.5), int(300 - b)) 
         update_canvas()
         delay(0.01)
+    
     pass    
 
 def move_rectangle():
     print("Rectangle")
+
+    # 사각형 가로 그리기
+    x =
+    while x < 700: # 가로 길이는 300, 중심 (400,300)
+        clear_canvas()
+        character.draw(400, 300)
+        update_canvas()
+        delay(0.01)
+
+    pass
+
+def move_rectangle():
+    print("Rectangle")
+
+    # 사각형 가로 그리기
+    x =300
+    while x < 700: # 가로 길이는 300, 중심 (400,300)
+        pass
+
     clear_canvas()
     character.draw(400, 300)
     update_canvas()
