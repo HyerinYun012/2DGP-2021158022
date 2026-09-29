@@ -1,12 +1,27 @@
 # 실습 과제 진행
 # 함수를 호출 후 실제 내용을 채워간다. 
+# 테스트 리드 타임을 줄여야 한다. 
 import math
 from pico2d import *
 
 open_canvas(800, 600)
 character = load_image('character.png')
 
+def draw_top():
+    print('top')
+    pass
 
+def draw_left():
+    print('left')
+    pass
+
+def draw_right():
+     print('right')
+     pass
+
+def draw_bottom():
+     print('bottom')
+     pass
 
 def move_circle():
     print("Circle")
@@ -18,13 +33,17 @@ def move_circle():
         character.draw(x,y)
         update_canvas()
         delay(0.01)
-
     pass    
 
 
 def move_rectangle():
     print("Rectangle")
-
+    # 최대한 잘게 쪼갠다. 
+    draw_top()
+    draw_right()
+    draw_bottom()
+    draw_left()
+    
     pass
 
 def move_triangle():
@@ -32,9 +51,10 @@ def move_triangle():
     pass
 
 while True:
-    move_circle()
+    # move_circle()
     move_rectangle()
     move_triangle()
+    break
     pass
 
 
