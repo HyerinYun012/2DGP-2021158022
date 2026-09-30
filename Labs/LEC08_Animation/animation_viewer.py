@@ -21,6 +21,16 @@ walk_frames = [
     (1256, 449, 199, 215, 1344)
 ]
 walk_frame_order = [0, 1, 2, 3, 4, 5]
+run_frames = [
+    (36, 236, 208, 202, 150),
+    (244, 236, 189, 202, 339),
+    (433, 236, 214, 202, 550),
+    (647, 236, 265, 202, 808),
+    (912, 236, 210, 202, 1019),
+    (1122, 236, 264, 202, 1276),
+    (1386, 236, 266, 202, 1548)
+]
+run_frame_order = [0, 1, 2, 3, 4, 5, 6]
 
 def play_animation(frames, frame_order):
     for _ in range(5):
@@ -43,5 +53,6 @@ def play_animation(frames, frame_order):
 
 play_animation(idle_frames, idle_frame_order)
 play_animation(walk_frames, walk_frame_order)
+play_animation(run_frames, run_frame_order)
 
 close_canvas()
