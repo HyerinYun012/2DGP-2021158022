@@ -8,11 +8,12 @@ frame = 0
 idle_frames = [
     (0, 681, 320, 260)
 ]
+left, bottom, width, height = idle_frames[frame]
 
 clear_canvas()
 sprite_sheet.clip_draw(
-    frame * 320, 681,
-    320, 260,
+    left, bottom,
+    width, height,
     400, 300
 )
 update_canvas()
