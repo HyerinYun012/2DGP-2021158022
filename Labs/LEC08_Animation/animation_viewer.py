@@ -25,4 +25,6 @@ for _ in range(5):
         update_canvas()
         delay(0.2)
 
+delay(1)
+
 close_canvas()
