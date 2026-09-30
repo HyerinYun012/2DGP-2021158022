@@ -12,16 +12,17 @@ idle_frames = [
     (724, 681, 226, 260)
 ]
 
-for frame in range(len(idle_frames)):
-    left, bottom, width, height = idle_frames[frame]
+for _ in range(5):
+    for frame in range(len(idle_frames)):
+        left, bottom, width, height = idle_frames[frame]
 
-    clear_canvas()
-    sprite_sheet.clip_draw(
-        left, bottom,
-        width, height,
-        400, 300
-    )
-    update_canvas()
-    delay(0.2)
+        clear_canvas()
+        sprite_sheet.clip_draw(
+            left, bottom,
+            width, height,
+            400, 300
+        )
+        update_canvas()
+        delay(0.2)
 
 close_canvas()
