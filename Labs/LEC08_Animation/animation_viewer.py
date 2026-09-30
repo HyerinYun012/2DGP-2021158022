@@ -42,5 +42,6 @@ def play_animation(frames, frame_order):
 
 
 play_animation(idle_frames, idle_frame_order)
+play_animation(walk_frames, walk_frame_order)
 
 close_canvas()
