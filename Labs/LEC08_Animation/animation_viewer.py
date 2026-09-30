@@ -6,21 +6,23 @@ open_canvas()
 sprite_sheet = load_image('sprite_sheet.png')
 frame = 0
 idle_frames = [
-    (0, 681, 320, 260),
-    (320, 681, 200, 260),
-    (526, 681, 200, 260),
-    (724, 681, 226, 260)
+    (121, 685, 200, 222, 200),
+    (322, 685, 208, 222, 408),
+    (526, 685, 199, 222, 611),
+    (724, 685, 226, 222, 814)
 ]
+idle_frame_order = [0, 1, 2, 3, 2, 1]
 
 for _ in range(5):
-    for frame in range(len(idle_frames)):
-        left, bottom, width, height = idle_frames[frame]
+    for frame in idle_frame_order:
+        left, bottom, width, height, feet_center_x = idle_frames[frame]
+        draw_x = 400 - (feet_center_x - (left + width / 2))
 
         clear_canvas()
         sprite_sheet.clip_draw(
             left, bottom,
             width, height,
-            400, 300
+            draw_x, 300
         )
         update_canvas()
         delay(0.2)
