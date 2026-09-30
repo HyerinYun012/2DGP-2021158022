@@ -65,7 +65,8 @@ def play_animation(frames, frame_order):
     delay(1)
 
 
-for frames, frame_order in animations:
-    play_animation(frames, frame_order)
+while True:
+    for frames, frame_order in animations:
+        play_animation(frames, frame_order)
 
 close_canvas()
