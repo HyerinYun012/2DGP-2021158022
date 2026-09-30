@@ -7,7 +7,8 @@ sprite_sheet = load_image('sprite_sheet.png')
 frame = 0
 idle_frames = [
     (0, 681, 320, 260),
-    (320, 681, 220, 260)
+    (320, 681, 220, 260),
+    (540, 681, 190, 260)
 ]
 
 for frame in range(len(idle_frames)):
