@@ -3,42 +3,29 @@ from pico2d import *
 
 open_canvas()
 
-sprite_sheet = load_image('sprite_sheet.png')
+sprite_sheet = load_image('sprite_sheet_clean.png')
 scale = 2
-idle_frames = [
-    (121, 685, 200, 222, 200),
-    (322, 685, 208, 222, 408),
-    (526, 685, 199, 222, 611),
-    (724, 685, 226, 222, 814)
-]
-idle_frame_order = [0, 1, 2, 3, 2, 1]
-walk_frames = [
-    (134, 449, 235, 215, 266),
-    (363, 449, 236, 215, 482),
-    (595, 449, 224, 215, 715),
-    (812, 449, 229, 215, 936),
-    (1034, 449, 226, 215, 1152),
-    (1256, 449, 199, 215, 1344)
-]
-walk_frame_order = [0, 1, 2, 3, 4, 5]
-run_frames = [
-    (36, 236, 208, 202, 150),
-    (244, 236, 189, 202, 339),
-    (433, 236, 214, 202, 550),
-    (647, 236, 265, 202, 808),
-    (912, 236, 210, 202, 1019),
-    (1122, 236, 264, 202, 1276),
-    (1386, 236, 266, 202, 1548)
-]
-run_frame_order = [0, 1, 2, 3, 4, 5, 6]
-attack_frames = [
-    (55, 19, 193, 227, 126),
-    (305, 19, 282, 227, 390),
-    (587, 19, 449, 227, 796),
-    (1036, 19, 330, 227, 1227),
-    (1366, 19, 299, 227, 1517)
-]
-attack_frame_order = [0, 1, 2, 3, 4]
+frame_width = 480
+frame_height = 240
+
+
+def make_frames(bottom, frame_count):
+    return [
+        (frame * frame_width, bottom, frame_width, frame_height)
+        for frame in range(frame_count)
+    ]
+
+
+idle_frames = make_frames(720, 4)
+walk_frames = make_frames(480, 6)
+run_frames = make_frames(240, 7)
+attack_frames = make_frames(0, 5)
+
+idle_frame_order = list(range(len(idle_frames)))
+idle_frame_order += list(range(len(idle_frames) - 2, 0, -1))
+walk_frame_order = list(range(len(walk_frames)))
+run_frame_order = list(range(len(run_frames)))
+attack_frame_order = list(range(len(attack_frames)))
 animations = [
     (idle_frames, idle_frame_order),
     (walk_frames, walk_frame_order),
@@ -62,14 +49,13 @@ def play_animation(frames, frame_order):
             if quit_requested():
                 return False
 
-            left, bottom, width, height, anchor_x = frames[frame]
-            draw_x = 400 - (anchor_x - (left + width / 2)) * scale
+            left, bottom, width, height = frames[frame]
 
             clear_canvas()
             sprite_sheet.clip_draw(
                 left, bottom,
                 width, height,
-                draw_x, 300,
+                400, 300,
                 width * scale, height * scale
             )
             update_canvas()
