@@ -5,6 +5,9 @@ open_canvas()
 
 sprite_sheet = load_image('sprite_sheet.png')
 frame = 0
+idle_frames = [
+    # (left, bottom, width, height)
+]
 
 clear_canvas()
 sprite_sheet.clip_draw(
