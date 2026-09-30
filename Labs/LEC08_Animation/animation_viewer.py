@@ -8,7 +8,7 @@ frame = 0
 idle_frames = [
     (0, 681, 320, 260),
     (320, 681, 220, 260),
-    (540, 681, 190, 260)
+    (526, 681, 200, 260)
 ]
 
 for frame in range(len(idle_frames)):
