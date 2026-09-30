@@ -46,9 +46,22 @@ animations = [
     (attack_frames, attack_frame_order)
 ]
 
+def quit_requested():
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            return True
+        if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            return True
+
+    return False
+
+
 def play_animation(frames, frame_order):
     for _ in range(5):
         for frame in frame_order:
+            if quit_requested():
+                return False
+
             left, bottom, width, height, anchor_x = frames[frame]
             draw_x = 400 - (anchor_x - (left + width / 2)) * scale
 
@@ -62,11 +75,19 @@ def play_animation(frames, frame_order):
             update_canvas()
             delay(0.2)
 
-    delay(1)
+    for _ in range(10):
+        if quit_requested():
+            return False
+        delay(0.1)
+
+    return True
 
 
-while True:
+running = True
+while running:
     for frames, frame_order in animations:
-        play_animation(frames, frame_order)
+        running = play_animation(frames, frame_order)
+        if not running:
+            break
 
 close_canvas()
