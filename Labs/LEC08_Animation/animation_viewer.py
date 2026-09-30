@@ -12,12 +12,21 @@ idle_frames = [
     (724, 685, 226, 222, 814)
 ]
 idle_frame_order = [0, 1, 2, 3, 2, 1]
+walk_frames = [
+    (134, 449, 235, 215, 266),
+    (363, 449, 236, 215, 482),
+    (595, 449, 224, 215, 715),
+    (812, 449, 229, 215, 936),
+    (1034, 449, 226, 215, 1152),
+    (1256, 449, 199, 215, 1344)
+]
+walk_frame_order = [0, 1, 2, 3, 4, 5]
 
 def play_animation(frames, frame_order):
     for _ in range(5):
         for frame in frame_order:
-            left, bottom, width, height, feet_center_x = frames[frame]
-            draw_x = 400 - (feet_center_x - (left + width / 2)) * scale
+            left, bottom, width, height, anchor_x = frames[frame]
+            draw_x = 400 - (anchor_x - (left + width / 2)) * scale
 
             clear_canvas()
             sprite_sheet.clip_draw(
